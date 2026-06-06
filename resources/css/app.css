@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #fcf9f7;
+  --surface-color: #ffffff;
+  --surface-elevated: #fcf6f2;
+  --surface-card: #ffffff;
+  --border-color: #e5e7eb;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --primary-color: #f97316;
+  --primary-hover: #ea580c;
+  --secondary-color: #ffedd5;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --font-sans: 'Geist', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --roundness: 6px;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Micro-animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(249, 115, 22, 0.1);
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+}
+
+.badge-draft { background: #f1f5f9; color: #475569; }
+.badge-sent { background: #dbeafe; color: #1d4ed8; }
+.badge-review { background: #fef3c7; color: #b45309; }
+.badge-approved { background: #d1fae5; color: #047857; }
+.badge-paid { background: #e0e7ff; color: #4338ca; }
+.badge-customs { background: #f3e8ff; color: #6b21a8; }
+.badge-shipped { background: #ecfeff; color: #0e7490; }
+.badge-delivered { background: #d1fae5; color: #065f46; }
+.badge-archived { background: #f1f5f9; color: #475569; }
+.badge-revised { background: #fee2e2; color: #b91c1c; }
